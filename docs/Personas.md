@@ -12,7 +12,7 @@ Concejal de urbanismo de Alcalá de Henares.
 
 Está recibiendo muchas quejas por parte de los habitantes de la ciudad debido a la mala gestión de la infraestructura de la misma. 
 
-Necesita optimizar los tiempos de los semáforos y de las rutas entre puntos claves de la ciudad.
+Necesita optimizar los tiempos de los semáforos y de las rutas entre ubicaciones en las que se crea congestión en la cuidad.
 
 
 
