@@ -8,7 +8,7 @@
 - [ ] [[M2] Método que genera la ruta dado un origen y el destino](https://github.com/pedromarting3/OnTime/milestone/2)  
     _Nuestra cliente (Yolanda) necesita introducir el origen y el destino para obtener la ruta más rápida._
 
-    _Este milestone se superará cuando nuestro servicio genere la ruta a partir de los dos datos._
+    _Este milestone se superará cuando nuestro servicio genere la ruta a partir de los dos datos suministrados._
 
 - [ ] [[M3] Formato en el que nuestro servicio genera la ruta obtenida](https://github.com/pedromarting3/OnTime/milestone/3)  
     _Yolanda necesita que la ruta obtenida sea fácil de interpretar._
