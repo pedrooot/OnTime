@@ -13,4 +13,4 @@
 - [ ] [[M3] Documento en el que se plasma la ruta obtenida por el servicio](https://github.com/pedromarting3/OnTime/milestone/3)  
     _Yolanda necesita que la ruta obtenida sea fácil de interpretar._
     
-    _Este milestone se considerará superado cuando nuestro servicio genere un documento con un formato determinado. El formato de este archivo será de texto plano (.txt) y contendrá información completa sobre la ruta en forma de dígitos y metacaracteres._
+    _Este milestone se considerará superado cuando nuestro servicio genere un documento con un formato determinado. El formato de este documento será de texto plano (.txt) y contendrá información completa sobre la ruta en forma de dígitos y metacaracteres._
