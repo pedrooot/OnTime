@@ -11,7 +11,13 @@ Los principales clientes del servicio serán:
 * Usuarios-> Podrán obtener la mejor ruta a su destino.
 * Concejalía de urbanismo-> Usarán la información recopilada con el fin de mejorar y optimizar la infraestructura de las ciudades.
 
-## Configuración inicial del objetivo 0
+## Docs
 * [Configuración de claves SSH y GPG](/docs/Captura%20de%20Pantalla%202022-09-15%20a%20las%2011.31.04.png)
 
 * [Configuración de repositorio local](/docs/Captura%20de%20Pantalla%202022-09-16%20a%20las%2019.31.40.png)
+
+* [Personas](/docs/Personas.md)
+
+* [Milestones](/docs/Milestones.md)
+
+* [Historias de usuario](/docs/Historias.md)
