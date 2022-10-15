@@ -4,10 +4,10 @@
 class Usuario {
     /**
      * Constructor de la clase Usuario
-     * @param {Number} id 
-     * @param {String} nombre 
-     * @param {String} email 
-     * @param {String} password 
+     * @param {Number} id Identificador del usuario
+     * @param {String} nombre Nombre del usuario
+     * @param {String} email Email del usuario
+     * @param {String} password Contraseña del usuario
      */
     constructor(id, nombre, email, password) {
         this.id = id;
@@ -18,7 +18,7 @@ class Usuario {
 
     /**
      * Método que devuelve el id del usuario
-     * @returns {Number} id
+     * @returns {Number} id Identificador del usuario
      */
     get id() {
         return this.id;
@@ -26,7 +26,7 @@ class Usuario {
 
     /**
      * Método que devuelve el nombre del usuario
-     * @returns {String} nombre
+     * @returns {String} nombre Nombre del usuario
      */
     get nombre() {
         return this.nombre;
@@ -34,7 +34,7 @@ class Usuario {
 
     /**
      * Método que devuelve el email del usuario
-     * @returns {String} email
+     * @returns {String} email Email del usuario
      */
     get email() {
         return this.email;
@@ -42,7 +42,7 @@ class Usuario {
 
     /**
      * Método que devuelve el password del usuario
-     * @returns {String} password
+     * @returns {String} password Contraseña del usuario
      */
     get password() {
         return this.password;
