@@ -1,2 +1,2 @@
-lenguaje:
-entidad: src/
+lenguaje: node.js
+entidad: src/Tramo.js
