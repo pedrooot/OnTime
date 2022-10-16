@@ -7,13 +7,13 @@ class Ruta {
      * @param {Number} id Identificador de la ruta
      * @param {String} nombre Nombre de la ruta
      * @param {Array} tramos Tramos de la ruta
-     * @param {Number} idUsuario Identificador del usuario
+     * @param {String} emailUsuario Identificador del usuario mediante su email
      */
-    constructor(id, nombre, tramos, idUsuario) {
+    constructor(id, nombre, tramos, emailUsuario) {
         this.id = id;
         this.nombre = nombre;
         this.tramos = tramos;
-        this.idUsuario = idUsuario;
+        this.emailUsuario = emailUsuario;
     }
 
     /**
@@ -41,10 +41,10 @@ class Ruta {
     }
 
     /**
-     * Método que devuelve el id del usuario
-     * @returns {Number} idUsuario Identificador del usuario
+     * Método que devuelve el email del usuario
+     * @returns {Number} emailUsuario Identificador del usuario mediante su email
      */
-    get idUsuario() {
-        return this.idUsuario;
+    get emailUsuario() {
+        return this.emailUsuario;
     }
 }

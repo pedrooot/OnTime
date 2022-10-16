@@ -4,24 +4,14 @@
 class Usuario {
     /**
      * Constructor de la clase Usuario
-     * @param {Number} id Identificador del usuario
      * @param {String} nombre Nombre del usuario
      * @param {String} email Email del usuario
      * @param {String} password Contraseña del usuario
      */
-    constructor(id, nombre, email, password) {
-        this.id = id;
+    constructor(nombre, email, password) {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
-    }
-
-    /**
-     * Método que devuelve el id del usuario
-     * @returns {Number} id Identificador del usuario
-     */
-    get id() {
-        return this.id;
     }
 
     /**
