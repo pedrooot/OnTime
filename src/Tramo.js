@@ -11,8 +11,9 @@ class Tramo {
      * @param {Number} consumoMedio Consumo medio del tramo
      * @param {Number} tiempoMedio Tiempo medio del tramo
      * @param {Number} horaInicio Hora de inicio del tramo
+     * @param {String} matriculaVehiculo Matrícula del vehículo
      */
-    constructor (id, origen, destino, distancia, consumoMedio, tiempoMedio, horaInicio) {
+    constructor (id, origen, destino, distancia, consumoMedio, tiempoMedio, horaInicio, matriculaVehiculo) {
         this.id = id
         this.origen = origen
         this.destino = destino
@@ -20,6 +21,7 @@ class Tramo {
         this.consumoMedio = consumoMedio;
         this.tiempoMedio = tiempoMedio;
         this.horaInicio = horaInicio;
+        this.matriculaVehiculo = matriculaVehiculo;
     }
 
     /**
@@ -76,5 +78,13 @@ class Tramo {
      */
     get horaInicio() {
         return this.horaInicio;
+    }
+
+    /**
+     * Método que devuelve la matrícula del vehículo
+     * @returns {String} matriculaVehiculo Matrícula del vehículo
+     */
+    get matriculaVehiculo() {
+        return this.matriculaVehiculo;
     }
 }
