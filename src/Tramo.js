@@ -10,14 +10,16 @@ class Tramo {
      * @param {Number} distancia Distancia del tramo
      * @param {Number} consumoMedio Consumo medio del tramo
      * @param {Number} tiempoMedio Tiempo medio del tramo
+     * @param {Number} horaInicio Hora de inicio del tramo
      */
-    constructor (id, origen, destino, distancia, consumoMedio, tiempoMedio) {
+    constructor (id, origen, destino, distancia, consumoMedio, tiempoMedio, horaInicio) {
         this.id = id
         this.origen = origen
         this.destino = destino
         this.distancia = distancia
         this.consumoMedio = consumoMedio;
         this.tiempoMedio = tiempoMedio;
+        this.horaInicio = horaInicio;
     }
 
     /**
@@ -66,5 +68,13 @@ class Tramo {
      */
     get tiempoMedio() {
         return this.tiempoMedio;
+    }
+
+    /**
+     * Método que devuelve la hora de inicio del tramo
+     * @returns {Number} horaInicio Hora de inicio del tramo
+     */
+    get horaInicio() {
+        return this.horaInicio;
     }
 }
