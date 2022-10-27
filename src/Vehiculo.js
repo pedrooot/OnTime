@@ -1,5 +1,3 @@
-import tipoVehiculo from './TipoVehiculo';
-
 /**
  * Declaración de la clase Vehiculo
  */
@@ -7,13 +5,11 @@ class Vehiculo {
     /**
      * Constructor de la clase Vehiculo
      * @param {String} matricula Matrícula del vehículo
-     * @param {tipoVehiculo} tipoVehiculo Tipo de vehículo
      * @param {Number} antiguedad Distancia recorrida por el vehículo
      * @param {Number} consumoMedio Consumo medio del vehículo
      */
-    constructor(matricula, tipoVehiculo, antiguedad, consumoMedio) {
+    constructor(matricula, antiguedad, consumoMedio) {
         this.matricula = matricula;
-        this.tipoVehiculo = tipoVehiculo;
         this.antiguedad = antiguedad;
         this.consumoMedio = consumoMedio;
     }
@@ -24,14 +20,6 @@ class Vehiculo {
      */
     get matricula() {
         return this.matricula;
-    }
-
-    /**
-     * Método que devuelve el tipo de vehículo
-     * @returns {tipoVehiculo} tipoVehiculo Tipo de vehículo
-     */
-    get tipoVehiculo() {
-        return this.tipoVehiculo;
     }
 
     /**
