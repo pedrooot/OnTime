@@ -1,5 +1,7 @@
 /**
- * Declaración de la clase Vehiculo
+ * Declaración de la clase Vehiculo. Esta clase almacena la información de interés de un vehículo,
+ * que en este caso es su matrícula (identificador del vehículo), la antigüedad del mismo y el consumo
+ * medio de combustible por kilómetro.
  */
 class Vehiculo {
     /**

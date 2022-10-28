@@ -1,5 +1,8 @@
 /**
- * Declaración de la clase Tramo
+ * Declaración de la clase Tramo. Esta clase representa un tramo de una ruta, que está compuesto por un punto de origen,
+ * un destino, la distancia que hay entre esos dos puntos, el consumo medio de combustible que se 
+ * gasta (dependerá del vehículo que recorra el tramo), el tiempo medio que se tarda en recorrer ese tramo
+ * y por último la hora de inicio que influirá en la toma de decisiones debido a que el tráfico puede variar en función de la hora.
  */
 class Tramo {
     /**
@@ -13,10 +16,10 @@ class Tramo {
      * @param {Number} horaInicio Hora de inicio del tramo
      */
     constructor (id, origen, destino, distancia, consumoMedio, tiempoMedio, horaInicio) {
-        this.id = id
-        this.origen = origen
-        this.destino = destino
-        this.distancia = distancia
+        this.id = id;
+        this.origen = origen;
+        this.destino = destino;
+        this.distancia = distancia;
         this.consumoMedio = consumoMedio;
         this.tiempoMedio = tiempoMedio;
         this.horaInicio = horaInicio;

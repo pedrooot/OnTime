@@ -1,5 +1,6 @@
 /**
- * Declaración de la clase Ruta
+ * Declaración de la clase Ruta. Esta clase representa una ruta que está compuesta por una serie de tramos
+ * que recorre un vehículo concreto.
  */
 class Ruta {
     /**
