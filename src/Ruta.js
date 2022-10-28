@@ -6,11 +6,13 @@ class Ruta {
     /**
      * Constructor de la clase Ruta
      * @param {String} nombre Nombre de la ruta
+     * @param {Number} numeroParadas Número de paradas de la ruta 
      * @param {Array} tramos Tramos de la ruta
      * @param {String} matriculaVehiculo Matrícula del vehículo
      */
-    constructor(nombre, tramos, matriculaVehiculo) {
+    constructor(nombre, numeroParadas, tramos, matriculaVehiculo) {
         this.nombre = nombre;
+        this.numeroParadas = numeroParadas;
         this.tramos = tramos;
         this.matriculaVehiculo = matriculaVehiculo;
     }
@@ -21,6 +23,14 @@ class Ruta {
      */
     get nombre() {
         return this.nombre;
+    }
+
+    /**
+     * Método que devuelve el número de paradas de la ruta
+     * @returns {Number} numeroParadas Número de paradas de la ruta
+     */
+    get numeroParadas() {
+        return this.numeroParadas;
     }
 
     /**
