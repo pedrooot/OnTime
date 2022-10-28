@@ -22,8 +22,8 @@ Los principales clientes del servicio serán:
 
 * [Historias de usuario](/docs/Historias.md)
 
-## Check format
-Para comprobar el formato de los directorios ejecuta el siguiente comando:
+## Check sintax
+Para comprobar la sintaxis  de los directorios ejecuta el siguiente comando:
 ```shell
 grunt check
 ```
