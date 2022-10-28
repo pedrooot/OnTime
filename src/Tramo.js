@@ -6,28 +6,18 @@
 class Tramo {
     /**
      * Constructor de la clase Tramo
-     * @param {Number} id Identificador del tramo
      * @param {String} origen Origen del tramo
      * @param {String} destino Destino del tramo
      * @param {Number} distancia Distancia del tramo
      * @param {Number} tiempoMedio Tiempo medio del tramo
      * @param {Number} horaInicio Hora de inicio del tramo
      */
-    constructor (id, origen, destino, distancia, tiempoMedio, horaInicio) {
-        this.id = id;
+    constructor (origen, destino, distancia, tiempoMedio, horaInicio) {
         this.origen = origen;
         this.destino = destino;
         this.distancia = distancia;
         this.tiempoMedio = tiempoMedio;
         this.horaInicio = horaInicio;
-    }
-
-    /**
-     * Método que devuelve el id del tramo
-     * @returns {Number} id Identificador del tramo
-     */
-    get id() {
-        return this.id;
     }
 
     /**
