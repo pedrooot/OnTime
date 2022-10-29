@@ -21,3 +21,9 @@ Los principales clientes del servicio serán:
 * [Milestones](/docs/Milestones.md)
 
 * [Historias de usuario](/docs/Historias.md)
+
+## Check sintax
+Para comprobar la sintaxis  de los directorios ejecuta el siguiente comando:
+```shell
+grunt check
+```

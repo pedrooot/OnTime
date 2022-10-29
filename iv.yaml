@@ -1,0 +1,5 @@
+lenguaje: node.js
+entidad: src/Tramo.js
+automatizar:
+  fichero: package.json
+  orden: grunt
