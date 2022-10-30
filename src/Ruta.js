@@ -8,11 +8,13 @@ class Ruta {
      * @param {String} nombre Nombre de la ruta
      * @param {Number} numeroParadas Número de paradas de la ruta 
      * @param {Array} tramos Tramos de la ruta
+     * @param {Number} antiguedadVehiculo Antigüedad del vehículo
      */
-    constructor(nombre, numeroParadas, tramos) {
+    constructor(nombre, numeroParadas, tramos, antiguedadVehiculo) {
         this.nombre = nombre;
         this.numeroParadas = numeroParadas;
         this.tramos = tramos;
+        this.antiguantiguedadVehiculoedad = antiguedadVehiculo;
     }
 
     /**
@@ -37,5 +39,13 @@ class Ruta {
      */
     get tramos() {
         return this.tramos;
+    }
+
+    /**
+     * Método que devuelve la antigüedad del vehículo
+     * @returns {Number} antiguedadVehiculo Antigüedad del vehículo
+     */
+    get antiguedadVehiculo() {
+        return this.antiguedadVehiculo;
     }
 }
