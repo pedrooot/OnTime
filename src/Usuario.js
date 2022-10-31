@@ -5,11 +5,11 @@ class Usuario {
     /**
      * Constructor de la clase Usuario
      * @param {String} email Email del usuario
-     * @param {Array} rutas Rutas realizadas por el usuario
+     * @param {Array[Map]} infoRutas Informacion de las Rutas realizadas por el usuario
      */
-    constructor(email, rutas) {
+    constructor(email, infoRutas) {
         this.email = email;
-        this.rutas = rutas;
+        this.infoRutas = infoRutas;
     }
 
     /**
@@ -21,10 +21,10 @@ class Usuario {
     }   
 
     /**
-     * Método que devuelve las rutas del usuario
-     * @returns {Array} rutas Rutas del usuario
+     * Método que devuelve la informacion de las rutas del usuario
+     * @param {Array[Map]} infoRutas Informacion de las Rutas realizadas por el usuario
      */
-    get rutas() {
-        return this.rutas;
+    get infoRutas() {
+        return this.infoRutas;
     }
 }
