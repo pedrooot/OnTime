@@ -1,6 +1,6 @@
 /**
- * Declaración de la clase Ruta. Esta clase representa una ruta que está compuesta por una serie de tramos
- * que recorre un vehículo concreto.
+ * Declaración de la clase Ruta. Entidad. Esta clase representa una ruta, que está formada por un conjunto de tramos
+ * realizados por un vehiculo y un usuario.
  */
 class Ruta {
     /**
@@ -8,13 +8,15 @@ class Ruta {
      * @param {String} nombre Nombre de la ruta
      * @param {Number} numeroParadas Número de paradas de la ruta 
      * @param {Array} tramos Tramos de la ruta
-     * @param {Number} antiguedadVehiculo Antigüedad del vehículo
+     * @param {Vehiculo} vehiculo Vehículo de la ruta
+     * @param {Usuario} usuario Usuario de la ruta
      */
-    constructor(nombre, numeroParadas, tramos, antiguedadVehiculo) {
+    constructor(nombre, numeroParadas, tramos, vehiculo, usuario) {
         this.nombre = nombre;
         this.numeroParadas = numeroParadas;
         this.tramos = tramos;
-        this.antiguantiguedadVehiculoedad = antiguedadVehiculo;
+        this.vehiculo = vehiculo;
+        this.usuario = usuario;
     }
 
     /**
@@ -42,10 +44,18 @@ class Ruta {
     }
 
     /**
-     * Método que devuelve la antigüedad del vehículo
-     * @returns {Number} antiguedadVehiculo Antigüedad del vehículo
+     * Método que devuelve el vehículo de la ruta
+     * @returns {Vehiculo} vehiculo Vehículo de la ruta
      */
-    get antiguedadVehiculo() {
-        return this.antiguedadVehiculo;
+    get vehiculo() {
+        return this.vehiculo;
+    }
+
+    /**
+     * Método que devuelve el usuario de la ruta
+     * @returns {Usuario} usuario Usuario de la ruta
+     */
+    get usuario() {
+        return this.usuario;
     }
 }

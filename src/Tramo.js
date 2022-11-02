@@ -1,5 +1,5 @@
 /**
- * Declaración de la clase Tramo. Esta clase representa un tramo de una ruta, que está compuesto por un punto de origen,
+ * Declaración de la clase Tramo. Entidad. Esta clase representa un tramo de una ruta, que está compuesto por un punto de origen,
  * un destino, la distancia que hay entre esos dos puntos, el tiempo medio que se tarda en recorrer ese tramo
  * y por último la hora de inicio que influirá en la toma de decisiones debido a que el tráfico puede variar en función de la hora.
  */
