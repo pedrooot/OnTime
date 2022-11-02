@@ -1,24 +1,14 @@
 /**
- * Clase usuario. En esta clase se almacena la información de las Rutas que ha realizado un Usuario.
+ * Clase usuario. Objeto valor. En esta clase almacenaremos la información perteneciente a un usuario con respecto a las rutas que ha realizado.
  */
 class Usuario {
     /**
      * Constructor de la clase Usuario
-     * @param {String} email Email del usuario
-     * @param {Array[Map]} infoRutas Informacion de las Rutas realizadas por el usuario
+     * @param {Array[InfoRuta]} infoRutas Informacion de las Rutas realizadas por el usuario
      */
-    constructor(email, infoRutas) {
-        this.email = email;
+    constructor(infoRutas) {
         this.infoRutas = infoRutas;
     }
-
-    /**
-     * Método que devuelve el email del usuario
-     * @returns {String} email Email del usuario
-     */
-    get email() {
-        return this.email;
-    }   
 
     /**
      * Método que devuelve la informacion de las rutas del usuario
