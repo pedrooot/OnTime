@@ -40,4 +40,10 @@ class Tramo {
     get distancia() {
         return this.distancia;
     }
+
+    
+    /** Estructura de nodos que se van a crear para representar el origen y destino
+     *  const nodo = {nombre: valor, izquierda: null, derecha: null}
+     */
+    
 }
