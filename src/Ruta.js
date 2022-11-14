@@ -18,11 +18,39 @@
      * @param {Date} hora_llegada
      */
     constructor (origen, destino, tramos, hora_salida, hora_llegada) {
-        this.origen = origen;
-        this.destino = destino;
+        if(origen && origen.trim().length != 0)
+        {
+            this.origen = origen;
+        }
+        else
+        {
+            throw new Error("El origen de la ruta es imprescindible");
+        }
+        if(destino && destino.trim().length != 0)
+        {
+            this.destino = destino;
+        }
+        else
+        {
+            throw new Error("El destino de la ruta es imprescindible");
+        }
         this.tramos = tramos || [];
-        this.hora_salida = hora_salida;
-        this.hora_llegada = hora_llegada;
+        if(hora_salida && hora_salida.trim().length != 0)
+        {
+            this.hora_salida = hora_salida;
+        }
+        else
+        {
+            throw new Error("La hora de salida de la ruta es imprescindible");
+        }
+        if(hora_llegada && hora_llegada.trim().length != 0)
+        {
+            this.hora_llegada = hora_llegada;
+        }
+        else
+        {
+            throw new Error("La hora de llegada de la ruta es imprescindible");
+        }
     }
 
     /**

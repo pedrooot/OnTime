@@ -10,11 +10,34 @@ class Tramo {
      * @param {String} origen Origen del tramo
      * @param {String} destino Destino del tramo
      * @param {Number} distancia Distancia de separación entre el origen y el destino
+     * Las comprobaciones son imprescindibles para no introducir datos inválidos
      */
-    constructor (origen, destino, distancia) {
-        this.origen = origen;
-        this.destino = destino;
-        this.distancia = distancia;
+    constructor (origen, destino, distancia) 
+    {
+        if(origen && origen.trim().length != 0)
+        {
+            this.origen = origen;
+        }
+        else
+        {
+            throw new Error("El origen del tramo es imprescindible");
+        }
+        if(destino && destino.trim().length != 0)
+        {
+            this.destino = destino;
+        }
+        else
+        {
+            throw new Error("El destino del tramo es imprescindible");
+        }
+        if(distancia && distancia > 0)
+        {
+            this.distancia = distancia;
+        }
+        else
+        {
+            throw new Error("La distancia del tramo es imprescindible");
+        }
     }
 
     /**
