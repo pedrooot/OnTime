@@ -17,7 +17,8 @@
      * @param {Date} hora_salida
      * @param {Date} hora_llegada
      */
-    constructor (origen, destino, tramos, hora_salida, hora_llegada) {
+    constructor (origen, destino, tramos, hora_salida, hora_llegada) 
+    {
         if(origen && origen.trim().length != 0)
         {
             this.origen = origen;
