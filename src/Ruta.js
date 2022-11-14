@@ -20,7 +20,7 @@
     constructor (origen, destino, tramos, hora_salida, hora_llegada) {
         this.origen = origen;
         this.destino = destino;
-        this.tramos = tramos;
+        this.tramos = tramos || [];
         this.hora_salida = hora_salida;
         this.hora_llegada = hora_llegada;
     }
@@ -64,5 +64,23 @@
     get hora_llegada() { 
         return this.hora_llegada;
     }
-    
+    /**
+     * @param {Tramo} tramo 
+     * Funcion que se usa para añadir un tramo a una ruta
+     * Estamos suponiendo que la introducción de los tramos se hace de forma ordenada
+     */
+    add_tramo(tramo)
+    {
+        //Si no está ya en la ruta y no tiene distancia 0/negativa
+        if(!this.tramos.some(x => x.origen.includes(tramo.origen)) && !this.tramos.some(x => x.origen.includes(tramo.origen)) && tramo.distancia > 0)
+        {
+            this.tramos.push(tramo);
+        }
+        else
+        {
+            throw new Error("Datos del tramo invalidos");
+        }
+    }
+
 }
+
