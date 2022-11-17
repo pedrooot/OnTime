@@ -58,15 +58,23 @@ class Busqueda
         }
     }  
 
+    //Funcion que determina si un tramo debe de ir antes o despues
+
     //Funcion que determina si dos elementos son consecutivos 
     son_consecutivos(str1, str2)
     {
         return (this.suma_string(str1) === str2);
     }
 
-    construir_arbol()
+    //Funcion que construye la estructura de arbol con nodos para representar la clase 
+    //Se le pasa como atributo el enumerado de infotramos
+    construir_arbol(InfoTramos)
     {
-        
+        var iterator;
+        while(InfoTramos.length > iterator)
+        {
+
+        }
     }
 
     insertar(nodo, actual)
