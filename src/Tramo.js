@@ -66,3 +66,5 @@ class Tramo {
 
     
 }
+
+module.exports = Tramo;

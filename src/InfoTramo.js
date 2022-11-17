@@ -4,10 +4,30 @@
 const tramos = [{
     origen: 'a',
     destino: 'b',
-    hora: '9:20'
+    distancia: '300'
 },
 {
     origen: 'c',
     destino: 'd',
-    hora: '15:00'
+    distancia: '20'
+},
+{
+    origen: 'b',
+    destino: 'd',
+    distancia: '214'
+},
+{
+    origen: 'c',
+    destino: 'e',
+    distancia: '301'
+},
+{
+    origen: 'b',
+    destino: 'e',
+    distancia: '600'
+},
+{
+    origen: 'd',
+    destino: 'e',
+    distancia: '15'
 }];
