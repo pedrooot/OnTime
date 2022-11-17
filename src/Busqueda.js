@@ -119,12 +119,23 @@ class Busqueda
     }
 
     //Funcion que crea todas las combinaciones de tramos posibles de un origen a un destino
+    //La forma de hacer este algoritmo es ir tomando los elementos y para cada uno de ellos evaluar si se puede crear rutas hacia el destino desde el mismo
     crear_combinaciones(vector, origen, destino)
     {
         let actual = 0;
-        while(vector.length > actual)
+        var salida = [];
+        //Tomamos un iterador con el que vamos a manejar los elementos del vector
+        for (let i = 0; i < vector.lenght; i++)
         {
-            if(vector[actual].origen)
+            //Si el elemento actual contiene el origen
+            if(iterador1.origen === origen)
+            {
+                for (let j = i; j < vector.lenght; j++)
+                {
+                    //Si el elemento actual tiene continuación del origen
+                    
+                }
+            }
         }
     }   
 
