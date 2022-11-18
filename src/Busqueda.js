@@ -3,8 +3,8 @@
  * Usando este árbol, se utilizará un algoritmo greedy
  */
 
-const Tramo = require("Tramo.js");
-const InfoTramo = require("InfoTramo");
+const Tramo = require("./Tramo.js");
+const InfoTramo = require("./InfoTramo.js");
  
 
 class Busqueda 
@@ -28,7 +28,7 @@ class Busqueda
         else
         {
             throw new Error("El destino de la ruta es imprescindible");
-        }d
+        }
         if(hora_salida && hora_salida.trim().length != 0)
         {
             this.hora_salida = hora_salida;
@@ -101,17 +101,21 @@ class Busqueda
 
 
     //Funcion que pasa la info de los tramos a elementos de la clase tramo pasados a un vector
-    construir_tramos(InfoTramos)
+    construir_tramos(tramos)
     {
         //Contador de los tramos introducidos
         let actual = 0;
         //Vector de tramos 
         var vector = [];
         //Mientras que InfoTramos no esté vacío
-        while(InfoTramo.length > actual)
+        console.log('ssssssssss')
+        console.log(tramos[0][1]);
+        for(let aux in tramos)
         {
+            console.log('Pruebaaa')
+            console.log(aux[0].origen);
             //Asignamos un iterador con el que vamos a interactual
-            let iterator = new Tramo(Infotramo[actual].origen, InfoTramo[actual].destino, InfoTramo[actual].distancia);
+            let iterator = new Tramo(aux.origen, aux.destino, aux.distancia);
             vector.push(iterator);
             actual++;
         }
@@ -122,21 +126,25 @@ class Busqueda
     //La forma de hacer este algoritmo es ir tomando los elementos y para cada uno de ellos evaluar si se puede crear rutas hacia el destino desde el mismo
     crear_combinaciones(vector, origen, destino)
     {
-        let actual = 0;
         var salida = [];
+        console.log('HA LLEGADO');
         //Tomamos un iterador con el que vamos a manejar los elementos del vector
         for (let i = 0; i < vector.lenght; i++)
         {
             //Si el elemento actual contiene el origen
-            if(iterador1.origen === origen)
+            if(vector[i].origen === origen)
             {
                 for (let j = i; j < vector.lenght; j++)
                 {
                     //Si el elemento actual tiene continuación del origen
-                    
+                    if(vector[i].destino === vector[j].origen)
+                    {
+                        salida.push(this.crear_combinaciones(vector.slice(j,vector.lenght),vector[j].origen,destino))
+                    }
                 }
             }
         }
+        return salida;
     }   
 
     // insertar(nodo, actual)
@@ -196,3 +204,11 @@ class Busqueda
 
 
 }
+
+var prueba = new Busqueda('a','e','17:00');
+var elementos = InfoTramo;
+console.log(elementos);
+var vector = prueba.construir_tramos(elementos);
+console.log(vector);
+var salida = prueba.crear_combinaciones(vector,'a','e');
+console.log(salida);

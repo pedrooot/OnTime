@@ -5,6 +5,7 @@ const tramos = [{
     origen: 'a',
     destino: 'b',
     distancia: '300'
+
 },
 {
     origen: 'c',
@@ -31,3 +32,5 @@ const tramos = [{
     destino: 'e',
     distancia: '15'
 }];
+
+module.exports = tramos;
