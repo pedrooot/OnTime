@@ -100,27 +100,6 @@ class Busqueda
     }
 
 
-    //Funcion que pasa la info de los tramos a elementos de la clase tramo pasados a un vector
-    construir_tramos(tramos)
-    {
-        //Contador de los tramos introducidos
-        let actual = 0;
-        //Vector de tramos 
-        var vector = [];
-        //Mientras que InfoTramos no esté vacío
-        console.log('ssssssssss')
-        console.log(tramos[0][1]);
-        for(let aux in tramos)
-        {
-            console.log('Pruebaaa')
-            console.log(aux[0].origen);
-            //Asignamos un iterador con el que vamos a interactual
-            let iterator = new Tramo(aux.origen, aux.destino, aux.distancia);
-            vector.push(iterator);
-            actual++;
-        }
-        return vector;
-    }
 
     //Funcion que crea todas las combinaciones de tramos posibles de un origen a un destino
     //La forma de hacer este algoritmo es ir tomando los elementos y para cada uno de ellos evaluar si se puede crear rutas hacia el destino desde el mismo
@@ -200,15 +179,35 @@ class Busqueda
 
 
 
+}
 
-
-
+//Funcion que pasa la info de los tramos a elementos de la clase tramo pasados a un vector
+function construir_tramos()
+{
+    //Vector de tramos 
+    var vector = [];
+    //Mientras que InfoTramos no esté vacío
+    console.log('ssssssssss');
+    for(let i=0; i < InfoTramo.lenght; i++)
+    {
+        console.log('Pruebaaa')
+        console.log(tramos[i].origen);
+        //Asignamos un iterador con el que vamos a interactual
+        let iterator = new Tramo(InfoTramo[i].origen, InfoTramo[i].destino, InfoTramo[i].distancia);
+        console.log(iterator);
+        console.log("eeerreireireir");
+        vector.push(iterator);
+    }
+    return vector;
 }
 
 var prueba = new Busqueda('a','e','17:00');
 var elementos = InfoTramo;
-console.log(elementos);
+//var valor = prueba.contar_objetos(elementos);
+//console.log(valor);
 var vector = prueba.construir_tramos(elementos);
 console.log(vector);
 var salida = prueba.crear_combinaciones(vector,'a','e');
 console.log(salida);
+
+module.exports = {construir_tramos};
