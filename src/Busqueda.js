@@ -5,7 +5,7 @@
 
 const Tramo = require("./Tramo.js");
 const InfoTramo = require("./InfoTramo.js");
- 
+const Graph = require("./Graph.js");
 
 class Busqueda 
 {
@@ -100,25 +100,28 @@ class Busqueda
     }
 
 
-
     //Funcion que crea todas las combinaciones de tramos posibles de un origen a un destino
     //La forma de hacer este algoritmo es ir tomando los elementos y para cada uno de ellos evaluar si se puede crear rutas hacia el destino desde el mismo
-    crear_combinaciones(vector, origen, destino)
+    crear_combinaciones(vector,partida,final)
     {
         var salida = [];
-        console.log('HA LLEGADO');
         //Tomamos un iterador con el que vamos a manejar los elementos del vector
-        for (let i = 0; i < vector.lenght; i++)
+        for (let i in vector)
         {
             //Si el elemento actual contiene el origen
-            if(vector[i].origen === origen)
+            if(vector[i].origen === partida)
             {
-                for (let j = i; j < vector.lenght; j++)
+                let j = i;
+                for (j in vector)
                 {
                     //Si el elemento actual tiene continuación del origen
                     if(vector[i].destino === vector[j].origen)
                     {
-                        salida.push(this.crear_combinaciones(vector.slice(j,vector.lenght),vector[j].origen,destino))
+                        salida.push(vector[i]);
+                    }
+                    else
+                    {
+                        this.crear_combinaciones(vector.slice(i,vector.lenght),vector[j].destino,final)
                     }
                 }
             }
@@ -126,88 +129,79 @@ class Busqueda
         return salida;
     }   
 
-    // insertar(nodo, actual)
-    // {
-    //     if(this.son_consecutivos(nodo.origen,actual.destino))
-    //     {
-    //         //Comprobamos si la distancia es menor(el valor debe de ir a la izquierda)
-    //         if(nodo.distancia < actual.distancia)
-    //         {
-    //             if(actual.left === null)
-    //             {
-    //                 actual.left = nodo;
-    //             }
-    //             else
-    //             {
-    //                 this.insertar(nodo,actual.left);
-    //             }
-    //         }//La distancia es mayor por lo que va a la izquierda
-    //         else
-    //         {
-    //             if(actual.right === null)
-    //             {
-    //                 actual.right = nodo;
-    //             }
-    //             else
-    //             {
-    //                 this.insertar(nodo, actual.right);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // add_nodo(origen,destino,distancia,hora)
-    // {
-    //     var nodo = {
-    //         origen: origen,
-    //         destino: destino,
-    //         distancia: distancia,
-    //         hora: hora,
-    //         left: null,
-    //         right: null
-    //       }
-
-    //       if (this._root === null) 
-    //       {
-    //         this._root = node;
-    //       } 
-    //       else 
-    //       {      
-    //         this.insertar(nodo, this._root);
-    //       }
-    // }
-
-
-
 }
 
-//Funcion que pasa la info de los tramos a elementos de la clase tramo pasados a un vector
+//Funcion que pasa la info de los tramos a elementos de la clase tramo pasados a un grafo
 function construir_tramos()
 {
-    //Vector de tramos 
-    var vector = [];
-    //Mientras que InfoTramos no esté vacío
-    console.log('ssssssssss');
-    for(let i=0; i < InfoTramo.lenght; i++)
+    let g = new Graph();
+    //Aniadimos al nodo las letras que aparecen en InfoTramo
+    for(let i in InfoTramo)
     {
-        console.log('Pruebaaa')
-        console.log(tramos[i].origen);
-        //Asignamos un iterador con el que vamos a interactual
-        let iterator = new Tramo(InfoTramo[i].origen, InfoTramo[i].destino, InfoTramo[i].distancia);
-        console.log(iterator);
-        console.log("eeerreireireir");
-        vector.push(iterator);
+        //Si no se ha introducido ya 
+        if(!g.has_element(InfoTramo[i].origen))
+        {
+            g.addNode(InfoTramo[i].origen);
+        }
+        //Si no se ha introducido ya
+        if(!g.has_element(InfoTramo[i].destino))
+        {
+            g.addNode(InfoTramo[i].destino);
+        }
     }
-    return vector;
+
+    for(let i in InfoTramo)
+    {
+        g.addDirectedEdge(InfoTramo[i].origen, InfoTramo[i].destino, parseInt(InfoTramo[i].distancia));
+    }
+
+    return g;
+}
+function dijkstra(origen, grafo) 
+{
+    let costs = {},
+        parents = {},
+        visited = new Set();
+    for (let i in grafo.nodes) 
+    {
+        if (grafo.nodes[i] === origen) 
+        {
+            costs[origen] = 0;
+        } 
+        else 
+        {
+            costs[grafo.nodes[i]] = Infinity;
+        }
+        parents[grafo.nodes[i]] = null;
+    }
+    
+    let currVertex = grafo.vertexWithMinDistance(costs, visited);
+
+    while (currVertex !== null) {
+        let distance = costs[currVertex],
+            neighbors = grafo.edges[currVertex];
+        for (let neighbor in neighbors) {
+            let newDistance = distance + neighbors[neighbor];
+            if (costs[neighbor] > newDistance) {
+                costs[neighbor] = newDistance;
+                parents[neighbor] = currVertex;
+            }
+        }
+        visited.add(currVertex);
+        currVertex = grafo.vertexWithMinDistance(costs, visited);
+    }
+
+    console.log(parents);
+    console.log(costs);
 }
 
-var prueba = new Busqueda('a','e','17:00');
-var elementos = InfoTramo;
-//var valor = prueba.contar_objetos(elementos);
-//console.log(valor);
-var vector = prueba.construir_tramos(elementos);
-console.log(vector);
-var salida = prueba.crear_combinaciones(vector,'a','e');
-console.log(salida);
+
+prueba = new Busqueda('a','e','15:00');
+grafo = new Graph();
+grafo = construir_tramos();
+console.log(grafo);
+console.log("////Resultado de la lógica de negocio")
+dijkstra('a',grafo);
+
 
 module.exports = {construir_tramos};

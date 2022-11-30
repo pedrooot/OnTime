@@ -18,12 +18,12 @@ const tramos = [{
     distancia: '214'
 },
 {
-    origen: 'c',
-    destino: 'e',
+    origen: 'b',
+    destino: 'c',
     distancia: '301'
 },
 {
-    origen: 'b',
+    origen: 'c',
     destino: 'e',
     distancia: '600'
 },

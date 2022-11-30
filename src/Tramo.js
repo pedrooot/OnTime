@@ -40,29 +40,29 @@ class Tramo {
         }
     }
 
-    /**
-     * Método que devuelve el origen del tramo
-     * @returns {String} origen Origen del tramo
-     */
-    get origen() {
-        return this.origen;
-    }
+    // /**
+    //  * Método que devuelve el origen del tramo
+    //  * @returns {String} origen Origen del tramo
+    //  */
+    // get origen() {
+    //     return this.origen;
+    // }
 
-    /**
-     * Método que devuelve el destino del tramo
-     * @returns {String} destino Destino del tramo
-     */
-    get destino() {
-        return this.destino;
-    }
+    // /**
+    //  * Método que devuelve el destino del tramo
+    //  * @returns {String} destino Destino del tramo
+    //  */
+    // get destino() {
+    //     return this.destino;
+    // }
 
-    /**
-     * Método que devuelve la distancia del tramo
-     * @returns {Number} distancia Distancia de separación entre el origen y el destino
-     */
-    get distancia() {
-        return this.distancia;
-    }
+    // /**
+    //  * Método que devuelve la distancia del tramo
+    //  * @returns {Number} distancia Distancia de separación entre el origen y el destino
+    //  */
+    // get distancia() {
+    //     return this.distancia;
+    // }
 
     
 }
