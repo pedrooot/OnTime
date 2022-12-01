@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "main": "index.js",
   "scripts": {
-    "check": "grunt check"
+    "check": "grunt check",
+    "test": "mocha ./test/*.js"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -11,5 +12,8 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^1.1.0"
+  },
+  "dependencies": {
+    "mocha": "^10.1.0"
   }
 }

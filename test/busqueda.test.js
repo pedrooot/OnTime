@@ -1,11 +1,14 @@
+const describe = require("mocha");
+const it = require('mocha');
+
 const Busqueda = require("../src/Busqueda.js").Busqueda;
 const dijkstra = require("../src/Busqueda.js").dijkstra;
-const  contar_elementos = require("../src/Busqueda.js").contar_elementos;
+const contar_elementos = require("../src/Busqueda.js").contar_elementos;
 const InfoTramo = require("../src/InfoTramo.js");
 
-describe("Check valid form of tramos",()=>{
-    
-    it("Basic constructor operations",()=>{
+describe("Check valid form of tramos",() => {
+
+    it("Basic constructor operations",() => {
         const new_busqueda1 = new Busqueda('a','c');
         expect(new_busqueda1.origen).toBe('a');
         expect(new_busqueda1.destino).toBe('c');
@@ -16,7 +19,7 @@ describe("Check valid form of tramos",()=>{
         expect(new_busqueda3.origen).toBe('c');
         expect(new_busqueda3.destino).toBe('d');
     })
-    it("Dijkstra algorithm use",()=>{
+    it("Dijkstra algorithm use",() => {
         const salida = dijkstra(InfoTramo);
         expect(contar_elementos(salida.path)).toBeLessThanOrEqual(contar_elementos(InfoTramo));
         expect(salida.distance).toBeGreaterThan(0);
