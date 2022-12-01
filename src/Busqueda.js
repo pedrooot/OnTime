@@ -4,12 +4,12 @@
  */
 
 const InfoTramo = require("./InfoTramo.js");
-const Graph = require("./Graph.js");
+
+
 
 class Busqueda 
 {
-    diccionario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  
+
     constructor(origen, destino)
     {
         if(origen && origen.trim().length != 0 && this.diccionario.includes(origen))
@@ -33,83 +33,79 @@ class Busqueda
 
 }
 
-//Funcion que pasa la informacion de InfoTramo a un grafo
-function construir_tramos()
-{
-    let g = new Graph();
-    //Aniadimos al nodo las letras que aparecen en InfoTramo
-    for(let i in InfoTramo)
-    {
-        //Si no se ha introducido ya 
-        if(!g.has_element(InfoTramo[i].origen))
-        {
-            g.addNode(InfoTramo[i].origen);
+const lowestCostNode = (costs, processed) => {
+    return Object.keys(costs).reduce((lowest, node) => {
+      if (lowest === null || costs[node] < costs[lowest]) {
+        if (!processed.includes(node)) {
+          lowest = node;
         }
-        //Si no se ha introducido ya
-        if(!g.has_element(InfoTramo[i].destino))
-        {
-            g.addNode(InfoTramo[i].destino);
-        }
-    }
-
-    for(let i in InfoTramo)
-    {
-        g.addDirectedEdge(InfoTramo[i].origen, InfoTramo[i].destino, parseInt(InfoTramo[i].distancia));
-    }
-
-    return g;
-}
+      }
+      return lowest;
+    }, null);
+  };
 
 //Funcion que implementa la lógica de negocio
-function dijkstra(origen, grafo) 
-{
-    let costs = {},
-        parents = {},
-        visited = new Set();
-    for (let i in grafo.nodes) 
+const dijkstra = (graph) => {
+  
+    // track lowest cost to reach each node
+    const costs = Object.assign({finish: Infinity}, graph.start);
+  
+    // track paths
+    const parents = {finish: null};
+    for (let child in graph.start) {
+      parents[child] = 'start';
+    }
+  
+    // track nodes that have already been processed
+    const processed = [];
+  
+    let node = lowestCostNode(costs, processed);
+  
+    while (node) 
     {
-        if (grafo.nodes[i] === origen) 
+      let cost = costs[node];
+      let children = graph[node];
+      for (let n in children) 
+      {
+        let newCost = cost + children[n];
+        if (!costs[n]) 
         {
-            costs[origen] = 0;
-        } 
-        else 
+          costs[n] = newCost;
+          parents[n] = node;
+        }
+        if (costs[n] > newCost) 
         {
-            costs[grafo.nodes[i]] = Infinity;
+          costs[n] = newCost;
+          parents[n] = node;
         }
-        parents[grafo.nodes[i]] = null;
+      }
+      processed.push(node);
+      node = lowestCostNode(costs, processed);
     }
-    
-    let currVertex = grafo.vertexWithMinDistance(costs, visited);
-
-    while (currVertex !== null) {
-        let distance = costs[currVertex],
-            neighbors = grafo.edges[currVertex];
-        for (let neighbor in neighbors) {
-            let newDistance = distance + neighbors[neighbor];
-            if (costs[neighbor] > newDistance) {
-                costs[neighbor] = newDistance;
-                parents[neighbor] = currVertex;
-            }
-        }
-        visited.add(currVertex);
-        currVertex = grafo.vertexWithMinDistance(costs, visited);
+  
+    let optimalPath = ['finish'];
+    let parent = parents.finish;
+    while (parent) 
+    {
+        optimalPath.push(parent);
+        parent = parents[parent];
     }
-
-    return {
-        first: parents,
-        second: costs,
+    optimalPath.reverse();
+  
+    const results = {
+      distance: costs.finish,
+      path: optimalPath
     };
-    // console.log(parents);
-    // console.log(costs);
-}
+  
+    return results;
+  };
+  
+  console.log(dijkstra(InfoTramo));
 
-
-// prueba = new Busqueda('a','e','15:00');
-// grafo = new Graph();
+// grafo = new Graph;
 // grafo = construir_tramos();
-// console.log(grafo);
-// console.log("////Resultado de la lógica de negocio")
-// dijkstra('a',grafo);
+// value = dijkstra('a','e',grafo);
 
+// console.log(position(value.first,'d'))
 
-module.exports = {construir_tramos,Busqueda,dijkstra};
+module.exports = {Busqueda,dijkstra};
