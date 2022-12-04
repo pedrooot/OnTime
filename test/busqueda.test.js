@@ -1,4 +1,3 @@
-
 const Busqueda = require("../src/Busqueda.js").Busqueda;
 const dijkstra = require("../src/Busqueda.js").dijkstra;
 const contar_elementos = require("../src/Busqueda.js").contar_elementos;
