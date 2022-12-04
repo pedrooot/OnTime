@@ -1,5 +1,3 @@
-const describe = require("mocha");
-const it = require('mocha');
 
 const Busqueda = require("../src/Busqueda.js").Busqueda;
 const dijkstra = require("../src/Busqueda.js").dijkstra;
