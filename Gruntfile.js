@@ -3,6 +3,6 @@ module.exports = function (grunt) {
     "node --check src/*.js";
   });
   grunt.registerTask("test", "check code", function () {
-    "node Busqueda.js";
+    "jest ./test/busqueda.test.js";
   });
 };

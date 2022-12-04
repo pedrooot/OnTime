@@ -4,8 +4,7 @@ const contar_elementos = require("../src/Busqueda.js").contar_elementos;
 const InfoTramo = require("../src/InfoTramo.js");
 
 describe("Check valid form of tramos",() => {
-
-    it("Basic constructor operations",() => {
+        it("Basic constructor operations",() => {
         const new_busqueda1 = new Busqueda('a','c');
         expect(new_busqueda1.origen).toBe('a');
         expect(new_busqueda1.destino).toBe('c');
