@@ -22,6 +22,8 @@ Los principales clientes del servicio serán:
 
 * [Historias de usuario](/docs/Historias.md)
 
+* [Test runner y librería de aserciones](/docs/Test.md)
+
 ## Check sintax
 Para comprobar la sintaxis  de los directorios ejecuta el siguiente comando:
 ```shell
