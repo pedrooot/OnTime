@@ -27,3 +27,9 @@ Para comprobar la sintaxis  de los directorios ejecuta el siguiente comando:
 ```shell
 grunt check
 ```
+
+## Run tests
+Para ejecutar los test se ejecuta el siguiente comando:
+```shell
+grunt test
+```
