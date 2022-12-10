@@ -1,7 +1,7 @@
-const Busqueda = require("../src/Busqueda.js").Busqueda;
-const dijkstra = require("../src/Busqueda.js").dijkstra;
-const contar_elementos = require("../src/Busqueda.js").contar_elementos;
-const InfoTramo = require("../src/InfoTramo.js");
+const Busqueda = require("../src/busqueda.js").Busqueda;
+const dijkstra = require("../src/busqueda.js").dijkstra;
+const contar_elementos = require("../src/busqueda.js").contar_elementos;
+const InfoTramo = require("../src/infotramo.js");
 
 describe("Check valid form of tramos",() => {
         it("Basic constructor operations",() => {
