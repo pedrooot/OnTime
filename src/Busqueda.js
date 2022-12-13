@@ -1,32 +1,34 @@
 /**
- * Clase que transforma los datos de los tramos y los utiliza para crear un arbol
- * Usando este árbol, se utilizará un algoritmo greedy
+ * Clase que toma las conexiones de infotramo.js y uando un algoritmo dijkstra devuelve el camino óptimo
  */
 
-
 class Busqueda 
-{
-  diccionario = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    constructor(origen, destino)
-    {
-        if(origen && origen.trim().length != 0 && this.diccionario.includes(origen))
-        {
-            this.origen = origen;
-        }
-        else
-        {
-            throw new Error("El origen de la ruta es imprescindible");
-        }
-        if(destino && destino.trim().length != 0 && this.diccionario.includes(destino))
-        {
-            this.destino = destino;
-        }
-        else
-        {
-            throw new Error("El destino de la ruta es imprescindible");
-        }
+{  
+  /**
+     * Constructor de la clase Ruta
+     * @param {String} origen Punto de partida de la ruta
+     * @param {String} destino Final de la ruta
+  */
+  constructor(origen, destino)
+  {
+      if(origen && origen.trim().length != 0)
+      {
+        this.origen = origen;
+      }
+      else
+      {
+        throw new Error("El origen de la ruta es imprescindible");
+      }
+      if(destino && destino.trim().length != 0)
+      {
+        this.destino = destino;
+      }
+      else
+      {
+        throw new Error("El destino de la ruta es imprescindible");
+      }
 
-    }
+  }
 
 }
 
