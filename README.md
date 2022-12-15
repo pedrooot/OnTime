@@ -12,18 +12,30 @@ Los principales clientes del servicio serán:
 * Concejalía de urbanismo-> Usarán la información recopilada con el fin de mejorar y optimizar la infraestructura de las ciudades.
 
 ## Docs
-* [Configuración de claves SSH y GPG](/docs/Captura%20de%20Pantalla%202022-09-15%20a%20las%2011.31.04.png)
+* [Configuración de claves SSH y GPG](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Captura%20de%20Pantalla%202022-09-15%20a%20las%2011.31.04.png)
 
-* [Configuración de repositorio local](/docs/Captura%20de%20Pantalla%202022-09-16%20a%20las%2019.31.40.png)
+* [Configuración de repositorio local](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Captura%20de%20Pantalla%202022-09-16%20a%20las%2019.31.40.png)
 
-* [Personas](/docs/Personas.md)
+* [Personas](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Personas.md)
 
-* [Milestones](/docs/Milestones.md)
+* [Milestones](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Milestones.md)
 
-* [Historias de usuario](/docs/Historias.md)
+* [Historias de usuario](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Historias.md)
+
+* [Gestor de dependencias](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/gestor_dependencias.md)
+
+* [Gestor de tareas](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/gestor_tareas.md)
+
+* [Test runner y librería de aserciones](https://github.com/pedromarting3/OnTime/blob/objetivo4/docs/Test.md)
 
 ## Check sintax
 Para comprobar la sintaxis  de los directorios ejecuta el siguiente comando:
 ```shell
 grunt check
+```
+
+## Run tests
+Para ejecutar los test se ejecuta el siguiente comando:
+```shell
+grunt test
 ```
