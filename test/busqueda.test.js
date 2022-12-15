@@ -1,6 +1,4 @@
-const Busqueda = require("../src/busquedas.js").Busqueda;
-const dijkstra = require("../src/busquedas.js").dijkstra;
-const contar_elementos = require("../src/busquedas.js").contar_elementos;
+const {Busqueda, dijkstra, contar_elementos} = require('../src/busquedas');
 
 const tramos = {
     start: {A: 50, B: 20},

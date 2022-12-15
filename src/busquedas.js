@@ -52,6 +52,7 @@ class Busqueda
 
 }
 
+
 function nodo_minimo(costs, processed)
 {
     return Object.keys(costs).reduce((lowest, node) => {
@@ -119,7 +120,6 @@ function dijkstra(graph)
 
   return results;
 }
-
 function contar_elementos(objeto)
 {
   var length = 0;
@@ -134,4 +134,3 @@ function contar_elementos(objeto)
 }
 
 module.exports = {Busqueda,dijkstra,contar_elementos};
-
