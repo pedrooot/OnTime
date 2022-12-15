@@ -1,29 +1,35 @@
 const Busqueda = require("../src/busquedas.js").Busqueda;
 const dijkstra = require("../src/busquedas.js").dijkstra;
 const contar_elementos = require("../src/busquedas.js").contar_elementos;
-const InfoTramo = require("../src/infotramos.js");
+
+const tramos = {
+    start: {A: 50, B: 20},
+    A: {C: 45, D: 27},
+    B: {A: 83, D: 79},
+    C: {D: 61, finish: 33},
+    D: {finish: 15},
+    finish: {}
+  };
 
 describe("Check valid form of tramos",() => {
+    const new_busqueda1 = new Busqueda('a','c');
+    const new_busqueda2 = new Busqueda('b','d');
+    const new_busqueda3 = new Busqueda('c','d');
+    const salida = dijkstra(tramos);
+
         it("Basic constructor operations",() => {
-        const new_busqueda1 = new Busqueda('a','c');
         expect(new_busqueda1.origen).toBe('a');
         expect(new_busqueda1.destino).toBe('c');
-        const new_busqueda2 = new Busqueda('b','d');
         expect(new_busqueda2.origen).toBe('b');
         expect(new_busqueda2.destino).toBe('d');
-        const new_busqueda3 = new Busqueda('c','d');
         expect(new_busqueda3.origen).toBe('c');
         expect(new_busqueda3.destino).toBe('d');
     })
     it("Dijkstra algorithm use",() => {
-        const salida = dijkstra(InfoTramo);
-        expect(contar_elementos(salida.path)).toBeLessThanOrEqual(contar_elementos(InfoTramo));
+        expect(contar_elementos(salida.path)).toBeLessThanOrEqual(contar_elementos(tramos));
         expect(salida.distance).toBeGreaterThan(0);
         expect(salida.path[0]).toBe('start');
         expect(salida.path[contar_elementos(salida.path)-1]).toBe('finish');
 
     })
-
-
-
 });
