@@ -11,22 +11,42 @@ class Busqueda
   */
   constructor(origen, destino)
   {
-      if(origen && origen.trim().length != 0)
+    if(origen == destino)
+    {
+      throw new Error("El origen y el destino no pueden ser iguales");
+    }
+
+    if(origen)
+    {
+      if(origen.trim().length != 0)
       {
         this.origen = origen;
       }
       else
       {
-        throw new Error("El origen de la ruta es imprescindible");
+        throw new Error("La cadena introducida en origen no es válida");
       }
-      if(destino && destino.trim().length != 0)
+    }
+    else
+    {
+      throw new Error("Origen de la ruta no suministrado");
+    }
+    
+    if(destino)
+    {
+      if(destino.trim().length != 0)
       {
         this.destino = destino;
       }
       else
       {
-        throw new Error("El destino de la ruta es imprescindible");
+        throw new Error("La cadena introducida en destino no es válida");
       }
+    }
+    else
+    {
+      throw new Error("Destino de la ruta no suministrado");
+    }
 
   }
 
@@ -46,11 +66,9 @@ function nodo_minimo(costs, processed)
     }, null);
   };
 
-//Funcion que implementa la lógica de negocio
 function dijkstra(graph) 
 {
   
-  //Toma el costo mínimo para alcanzar cada nodo
   const costs = Object.assign({finish: Infinity}, graph.start);
 
   const parents = {finish: null};
@@ -59,7 +77,6 @@ function dijkstra(graph)
     parents[child] = 'start';
   }
 
-  // Selecciona los nodos que han sido visitados
   const processed = [];
 
   let node = nodo_minimo(costs, processed);
