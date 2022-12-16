@@ -9,3 +9,5 @@ Las imágenes de docker que son interesantes para mi proyecto son:
 * grunt image: imagen que implementaré para que se ajuste lo máximo posible a mis necesidades.
 
 La idea es intentar implementar mi propia imagen de docker y en el caso de que se produzcan incompatibilidades por mi equipo usaré la imagen de node.
+
+*Tras intentar crear nuestro propia imagen de docker, se dan probemas de compatibilidad por la arquitectura de mi ordenador por lo que voy a usar la imagen de node*
