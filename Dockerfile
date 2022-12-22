@@ -6,7 +6,7 @@ RUN mkdir -p /app/test /.npm
 
 WORKDIR /app/test
 
-# Copy package.json to /app folder and install deps there
+#Copy
 COPY --chown=1001 package.json /app
 RUN npm install
 
