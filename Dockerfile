@@ -8,11 +8,9 @@ WORKDIR /app/test
 
 #Copy
 COPY --chown=1001 package.json /app
-RUN npm install
 
 # Adjust permissions
-RUN chown -R 1001:1001 "/.npm"
-RUN chown -R 1001:1001 /app
+RUN npm install , chown -R 1001:1001 "/.npm" , chown -R 1001:1001 /app
 
 # Configure entrypoint
 ENTRYPOINT [ "npm", "run", "test" ]
