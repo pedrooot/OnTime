@@ -11,7 +11,7 @@ WORKDIR /app/test
 COPY --chown=1001 package.json /app
 
 # Adjust permissions
-RUN npm install ; npx grunt ; chown -R 1001:1001 "/.npm" ; chown -R 1001:1001 /app
+RUN npm install ; npm install -g grunt ; npm install -g jest ; chown -R 1001:1001 "/.npm" ; chown -R 1001:1001 /app
 
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
