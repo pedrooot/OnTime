@@ -17,7 +17,8 @@ RUN chown -R node /app
 #Cambiar al usuario genérico
 USER node
 
-RUN npm install --global pnpm grunt-cli grunt-exec jest
+RUN npm install --global pnpm grunt-cli jest
+RUN npm install grunt-exec --save-dev
 RUN pnpm install
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
