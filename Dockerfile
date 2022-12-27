@@ -1,17 +1,23 @@
 
 FROM node:latest as final
-
-
-# Create app and log directories
-RUN mkdir -p /app/test /.npm
+#Ejecuciones con root
+RUN mkdir -p /app/test
 
 WORKDIR /app/test
 
-# Cambia permisos
-COPY --chown=1001 package.json /app/test
+COPY package.json /app
 
-# Adjust permissions
-RUN npm install ; npm install -g grunt --save-dev ; npm install -g grunt-cli ; npm install -g jest ; npm install -g grunt-exec --save-dev ; chown -R 1001:1001 "/.npm" ; chown -R 1001:1001 /app/test
+ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
+ENV PNPM_HOME="/.pnpm"
+ENV PATH="${PATH}:${PNPM_HOME}:/home/node/.npm-global/bin"
 
+#node es el usuario genérico de la imagen base
+RUN chown -R node /app
+
+#Cambiar al usuario genérico
+USER node
+
+RUN npm install --global pnpm grunt-cli jest
+RUN pnpm install
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
