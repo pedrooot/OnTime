@@ -1,9 +1,9 @@
 
 FROM node:latest as final
 #Ejecuciones con root
-RUN mkdir -p /app/test
+RUN mkdir -p /app
 
-WORKDIR /app/test
+WORKDIR /app
 
 COPY package.json /app
 
