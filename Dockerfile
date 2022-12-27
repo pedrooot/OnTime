@@ -5,7 +5,7 @@ RUN mkdir -p /app/test
 
 WORKDIR /app/test
 
-COPY package.json /app/test
+COPY package.json /app
 
 ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
 ENV PNPM_HOME="/.pnpm"
