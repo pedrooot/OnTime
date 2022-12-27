@@ -18,7 +18,6 @@ RUN chown -R node /app
 USER node
 
 RUN npm install --global pnpm grunt-cli jest
-RUN npm install grunt-exec --save-dev
 RUN pnpm install
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
