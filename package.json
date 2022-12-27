@@ -2,7 +2,7 @@
   "name": "ontime",
   "version": "0.3.0",
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.5.3",
     "grunt-cli": "^1.4.3",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",

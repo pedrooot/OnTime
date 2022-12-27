@@ -1,11 +1,11 @@
 
 FROM node:latest as final
 #Ejecuciones con root
-RUN mkdir -p /app
+RUN mkdir -p /app/test
 
-WORKDIR /app
+WORKDIR /app/test
 
-COPY package.json /app
+COPY package.json /app/test
 
 ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
 ENV PNPM_HOME="/.pnpm"
