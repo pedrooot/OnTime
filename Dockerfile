@@ -18,7 +18,10 @@ RUN chown -R node /app
 #Cambiar al usuario genérico
 USER node
 
-RUN npm install --global pnpm grunt-cli jest
+#Instalo pnpm
+RUN curl -L https://unpkg.com/@pnpm/self-installer | node
+#Instalo dependencias
 RUN pnpm install
+
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
