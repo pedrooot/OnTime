@@ -10,7 +10,7 @@ Las imágenes de docker que son interesantes para mi proyecto son:
 * grunt image: se plantea la posibilidad de crear mi propia imagen de docker. 
 
 Otra opción que he encontrado y me parece interesante es:
-* [/huli/grunt](https://hub.docker.com/r/huli/grunt/#!): Esta imagen se ha creado con el objetivo de ejecutar tareas de grunt en alpine. Un punto a tener en cuenta es que usa la última versión estable de nodejs.
+* [/huli/grunt](https://hub.docker.com/r/huli/grunt/#!): Esta imagen se ha creado con el objetivo de ejecutar tareas de grunt en alpine, su tamaño es de 350MB (aproximadamente) Un punto a tener en cuenta es que usa la última versión estable de nodejs sin embargo lleva sin mantenimiento más de un año. Es la principal razón por la que se ha descartado.
 
 
 La idea que tenía en mente al inicio era crear una imagen de docker propia pero tras dedicarle mucho tiempo a la implementación de la misma se ha descartado la posibilidad por la complejidad, el tiempo que requiere y problemas de incompatibilidad. El tamaño estimado de la imagen es de 260MB.
