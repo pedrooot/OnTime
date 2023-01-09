@@ -8,7 +8,7 @@ COPY package.json /app
 
 ENV PNPM_HOME="/.pnpm" PATH="${PATH}:${PNPM_HOME}/bin"
 
-#node es el usuario genérico de la imagen base
+#Cambiamos permisos e instalamos pnpm
 RUN chown -R node /app && wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
 #Cambiar al usuario genérico
 USER node
