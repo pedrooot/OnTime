@@ -5,8 +5,8 @@ A la hora de escoger la imagen de docker que voy a usar voy a tener en cuenta lo
 * Tamaño (menor tamaño = mejor)
 
 Las imágenes de docker que son interesantes para mi proyecto son:
-* node: podría usarla por su estabilidad, versatilidad y compatibilidad con mi proyecto.
-* buster-slim: contenedor basado en debian que, como su nombre lo indica es liviana (64.03MB). No la voy a usar porque no se ajusta a las necesidades de mi proyecto, pero es una pena por el tamaño que tiene.
+* [node](https://hub.docker.com/_/node): podría usarla por su estabilidad, versatilidad y compatibilidad con mi proyecto.
+* [buster-slim](https://hub.docker.com/r/linuxcontainers/buster-slim): contenedor basado en debian que, como su nombre lo indica es liviana (64.03MB). No la voy a usar porque no se ajusta a las necesidades de mi proyecto, pero es una pena por el tamaño que tiene.
 * grunt image: se plantea la posibilidad de crear mi propia imagen de docker. 
 
 Otra opción que he encontrado y me parece interesante es:
