@@ -4,16 +4,13 @@ RUN mkdir -p /app/test
 
 WORKDIR /app/test
 
-COPY package.json /app
+COPY package.json package-lock.json /app
 
-ENV PNPM_HOME="/.pnpm" PATH="${PATH}:${PNPM_HOME}/bin"
-
-#Cambiamos permisos e instalamos pnpm
-RUN chown -R node /app && wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
-#Cambiar al usuario genérico
+#Cambiamos permiso
+RUN chown -R node /app
+#Cambiamos de usuario
 USER node
 #Instalo dependencias
-RUN pnpm install
-
+RUN npm ci
 # Configure entrypoint
 ENTRYPOINT [ "grunt", "test" ]
