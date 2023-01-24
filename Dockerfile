@@ -1,4 +1,4 @@
-FROM node:latest
+FROM vmware/node:latest
 #Ejecuciones con root
 RUN mkdir -p /app/test
 
