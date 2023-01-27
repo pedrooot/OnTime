@@ -4,7 +4,7 @@ module.exports = function (grunt)
 
   grunt.initConfig({
     exec:{
-      jest: 'jest test/*.js'
+      jest: 'npx jest test/*.js'
     }
   })
 

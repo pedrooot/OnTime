@@ -1,15 +1,15 @@
 FROM bitnami/node:latest
 RUN mkdir -p /app/test
 RUN useradd -m node
-WORKDIR /app/test
+WORKDIR /app
 
 COPY package.json package-lock.json /app
 
-ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
-ENV PATH="${PATH}:/home/node/.npm-global/bin"
-
 RUN chown -R node /app
+RUN npm install -g grunt-cli
 USER node
-RUN npm install -g grunt-cli jest && npm ci && rm /app/package-lock.json /app/package.json
+
+RUN npm ci && rm /app/package-lock.json /app/package.json
+WORKDIR /app/test
 ENTRYPOINT [ "grunt", "test" ]
 
